@@ -1,8 +1,13 @@
 package com.zhiteer.demo;
 
 
+import com.zhiteer.demo.model.DemoUser2Model;
 import com.zhiteer.demo.model.DemoUserModel;
+import com.zhiteer.demo.model.mapper.DemoUser2Mapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @RestController
@@ -11,6 +16,10 @@ public class DemoModelController {
 
     // 创建线程安全的Map，模拟users信息的存储
     static Map<Long, DemoUserModel> users = Collections.synchronizedMap(new HashMap<Long, DemoUserModel>());
+
+    @Autowired
+    private DemoUser2Mapper userMapper;
+
 
     /**
      * 处理"/demo/model/"的GET请求，用来获取用户列表
@@ -76,5 +85,20 @@ public class DemoModelController {
         return "success";
     }
 
+    public String getTimeStamp() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmssSSS");
+        return sdf.format(new Date());
+    }
+
+    @RequestMapping("/tSelect")
+    public String tSelect() {
+
+        String username = "elinx" + this.getTimeStamp();
+
+        int userId = userMapper.insert(username, 27);
+        DemoUser2Model User = userMapper.findByName(username);
+
+        return "UserId: " + userId + ", name: " + User.getName();
+    }
 
 }

@@ -7,4 +7,5 @@ public class TestModel {
 
     public String name;
     public String gender;
+
 }
