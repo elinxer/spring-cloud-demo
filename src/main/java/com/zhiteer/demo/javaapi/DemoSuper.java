@@ -33,7 +33,7 @@ class Student extends Person {
 /**
  * 可以单独运行此类
  */
-public class SuperDemo {
+public class DemoSuper {
     public static void main(String[] args) {
         Student stu = new Student();
         Student stu2 = new Student("广东工业大学");
