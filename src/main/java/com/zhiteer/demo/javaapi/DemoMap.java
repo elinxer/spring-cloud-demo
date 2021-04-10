@@ -1,4 +1,4 @@
-package com.zhiteer.demo.utils;
+package com.zhiteer.demo.javaapi;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -12,7 +12,7 @@ import java.util.Map;
  * https://www.cnblogs.com/fqfanqi/p/6187085.html
  *
  */
-public class BaseDemoMap {
+public class DemoMap {
 
 
     /**
@@ -96,15 +96,15 @@ public class BaseDemoMap {
 
         System.out.println("map 1 ====================\n");
 
-        BaseDemoMap.prtMap1();
+        DemoMap.prtMap1();
 
         System.out.println("map 2 ====================\n");
 
-        BaseDemoMap.prtMap2();
+        DemoMap.prtMap2();
 
         System.out.println("map 3 ====================\n");
 
-        BaseDemoMap.prtMap3();
+        DemoMap.prtMap3();
 
         Map<Integer, String> map = new HashMap<>();
         map.put(1, "elinx");
