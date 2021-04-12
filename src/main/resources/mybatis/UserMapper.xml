@@ -3,22 +3,22 @@
 <mapper namespace="com.zhiteer.demo.demouser.dao.UserMapper">
   <resultMap id="BaseResultMap" type="com.zhiteer.demo.demouser.model.User">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
-    <result column="salt" jdbcType="VARCHAR" property="salt" />
-    <result column="password" jdbcType="CHAR" property="password" />
-    <result column="status" jdbcType="TINYINT" property="status" />
-    <result column="role_id" jdbcType="VARCHAR" property="roleId" />
-    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
-    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="bip" jdbcType="VARCHAR" property="bip" />
   </resultMap>
+
+  <sql id="Base_Column_List">
+    id,name
+  </sql>
 
   <select id="countByExample" parameterType="com.zhiteer.demo.demouser.dao.UserMapper" resultType="java.lang.Long">
     select count(*) from user
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="com.zhiteer.demo.demouser.dao.UserMapper" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
   </select>
 
 </mapper>

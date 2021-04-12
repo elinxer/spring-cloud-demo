@@ -1,14 +1,17 @@
 package com.zhiteer.demo.demouser;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class ResponseData {
 
-    private String msg;
+    private String msg = "";
 
-    private Number errorCode;
+    private Number errorCode = 0;
 
-    private Map<String, Object> data;
+    private Map<String, Object> data = new HashMap<>();
+
+    private Object result = new Object();
 
     public Map<String, Object> getData() {
         return data;
@@ -34,6 +37,14 @@ public class ResponseData {
         this.data = data;
     }
 
+    public Object getResult() {
+        return result;
+    }
+
+    public void setResult(Object result) {
+        this.result = result;
+    }
+
     /**
      * @Description 定义无参数的构造方法
      **/
@@ -50,6 +61,11 @@ public class ResponseData {
         this.data = data;
         this.msg = msg;
         this.errorCode = errorCode;
+    }
+
+
+    public void ResponseObject(Object data) {
+        this.result = data;
     }
 
 }
