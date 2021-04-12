@@ -14,7 +14,7 @@ public class DemoLambda {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println("Hello World 2222");
+
             }
         }).start();
 
