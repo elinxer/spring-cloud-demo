@@ -14,6 +14,8 @@ public interface MyUserDaoService {
 
 	List<MyUser> selectAllUser() throws Exception;
 
+	List<MyUser> selectAllUserPage() throws Exception;
+
 	int addUser(MyUser record) throws Exception;
 
 	int updateUser(MyUser record) throws Exception;

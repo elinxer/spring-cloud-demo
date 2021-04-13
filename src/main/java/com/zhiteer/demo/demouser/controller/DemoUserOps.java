@@ -1,5 +1,7 @@
 package com.zhiteer.demo.demouser.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.zhiteer.demo.demouser.ResponseData;
 import com.zhiteer.demo.demouser.model.MyUser;
 import com.zhiteer.demo.demouser.service.MyUserDaoService;
@@ -35,7 +37,7 @@ public class DemoUserOps {
      * @throws Exception
      */
     @RequestMapping("/selectUserLike")
-    public ResponseData selectUser(@RequestBody MyUser user) throws Exception {
+    public ResponseData selectUserLike(@RequestBody MyUser user) throws Exception {
 
         ResponseData data = new ResponseData();
 
@@ -47,6 +49,23 @@ public class DemoUserOps {
         List<MyUser> result = myUserService.selectUserLike(param);
 
         data.setResult(result);
+
+        return data;
+    }
+
+
+    @RequestMapping("/selectUserPage")
+    public ResponseData selectUserPage() throws Exception {
+
+        ResponseData data = new ResponseData();
+
+        int pageNum = 1;
+        int pageSize = 20;
+
+        // 分页的三行核心代码，装了依赖包后，仅仅这三行代码就可以实现分页
+        PageHelper.startPage(pageNum, pageSize);
+        List<MyUser> sysMenus = myUserService.selectAllUserPage();
+        data.setResult(new PageInfo<MyUser>(sysMenus));
 
         return data;
     }

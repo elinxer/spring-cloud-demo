@@ -7,7 +7,7 @@
     </select>
 
     <select id="selectAllUser" resultType="com.zhiteer.demo.demouser.model.MyUser">
-        select * from user;
+        select * from user
     </select>
 
     <!--入参类型为实体User类，故可以直接调用实体属性名，而不是map类型的点号去识别-->

@@ -26,6 +26,11 @@ public class MyUserDaoServiceImpl implements MyUserDaoService {
 	}
 
 	@Override
+	public List<MyUser> selectAllUserPage() throws Exception {
+		return myUserDao.selectAllUser();
+	}
+
+	@Override
 	public int addUser(MyUser record) throws Exception {
 		return myUserDao.addUser(record);
 	}
