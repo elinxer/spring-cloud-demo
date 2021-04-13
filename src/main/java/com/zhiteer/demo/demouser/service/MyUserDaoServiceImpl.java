@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class MyUserDaoServiceImpl implements MyUserDaoService {
@@ -42,6 +43,11 @@ public class MyUserDaoServiceImpl implements MyUserDaoService {
 	@Override
 	public int updateUserDemo(MyUser record) throws Exception {
 		return myUserDao.updateUserDemo(record);
+	}
+
+	@Override
+	public List<MyUser> selectUserLike(Map<String, Object> param) throws Exception {
+		return myUserDao.selectUserLike(param);
 	}
 
 
