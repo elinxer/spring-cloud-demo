@@ -3,6 +3,7 @@ package com.zhiteer.demo.demouser.service;
 import com.zhiteer.demo.demouser.model.MyUser;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Dao接口，提供调用
@@ -20,5 +21,7 @@ public interface MyUserDaoService {
 	int deleteUser(Integer id) throws Exception;
 
 	int updateUserDemo(MyUser record) throws Exception;
+
+	List<MyUser> selectUserLike(Map<String, Object> param) throws Exception;
 
 }

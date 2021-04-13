@@ -16,6 +16,7 @@
         values (#{name}, #{age})
     </insert>
 
+    <!--入参可以是实体类，也可以是自定义的请求参数类型的实体类，不一定是model-->
     <update id="updateUser" parameterType="com.zhiteer.demo.demouser.model.MyUser">
         update user set name=#{name}, age=#{age} where id=#{id}
     </update>
@@ -36,5 +37,15 @@
         </set>
         where id=#{id, jdbcType=INTEGER}
     </update>
+
+    <select id="selectUserLike" resultType="com.zhiteer.demo.demouser.model.MyUser">
+        select * from user where 1=1
+        <if test="name!=null">
+            and name like concat('', #{name},'%')
+        </if>
+        <if test="age!=null">
+            and name=#{age}
+        </if>
+    </select>
 
 </mapper>

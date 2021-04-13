@@ -4,6 +4,7 @@ import com.zhiteer.demo.demouser.model.MyUser;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface MyUserDao {
@@ -19,5 +20,7 @@ public interface MyUserDao {
     int deleteUser(Integer key);
 
     int updateUserDemo(MyUser record);
+
+    List<MyUser> selectUserLike(Map<String, Object> param);
 
 }

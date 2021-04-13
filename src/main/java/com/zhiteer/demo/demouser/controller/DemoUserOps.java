@@ -9,16 +9,52 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+// 学习
+// http://c.biancheng.net/view/4353.html
 
-@RequestMapping("/myuser3")
+@RequestMapping("/DemoUserOps")
 @RestController
-public class MyUser3 {
+public class DemoUserOps {
 
 
     @Autowired
     private MyUserDaoService myUserService;
+
+    //region demo_select
+
+    /**
+     * select 文档
+     *
+     * http://c.biancheng.net/view/4353.html
+     *
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/selectUserLike")
+    public ResponseData selectUser(@RequestBody MyUser user) throws Exception {
+
+        ResponseData data = new ResponseData();
+
+        Map<String, Object> param = new HashMap<>();
+
+        param.put("name", user.getName());
+        param.put("age", user.getAge());
+
+        List<MyUser> result = myUserService.selectUserLike(param);
+
+        data.setResult(result);
+
+        return data;
+    }
+
+    //endregion
+
+
+    //region demo_one
 
 
     @RequestMapping("/user")
@@ -157,5 +193,7 @@ public class MyUser3 {
 
         return data;
     }
+
+    //endregion
 
 }
