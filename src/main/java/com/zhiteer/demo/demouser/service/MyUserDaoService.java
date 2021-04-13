@@ -19,4 +19,6 @@ public interface MyUserDaoService {
 
 	int deleteUser(Integer id) throws Exception;
 
+	int updateUserDemo(MyUser record) throws Exception;
+
 }

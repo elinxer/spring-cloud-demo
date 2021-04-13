@@ -106,6 +106,37 @@ public class MyUser3 {
      * post raw 模式
      *
      * {
+     *     "id": "3",
+     *     "name": "elinx888888",
+     *     "age": 29
+     * }
+     *
+     * @param user
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/updateDemo")
+    public ResponseData updateDemo(@RequestBody MyUser user ) throws Exception {
+
+        // 由于设置底层update具体可以更新的字段规则
+        // 所以每个参数不是必须传递值，默认null为没有传递不进行更新
+        // 注意，如果实体类内部有定义了默认值，如age=0，则使用实体类传递参数到mybatis就会被认为是有值！！
+
+        ResponseData data = new ResponseData();
+
+        System.out.println(user);
+
+        int result = myUserService.updateUserDemo(user);
+
+        data.setResult(result);
+
+        return data;
+    }
+
+    /**
+     * post raw 模式
+     *
+     * {
      *     "id": "3"
      * }
      *

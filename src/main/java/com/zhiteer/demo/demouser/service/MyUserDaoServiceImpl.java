@@ -39,4 +39,10 @@ public class MyUserDaoServiceImpl implements MyUserDaoService {
 		return myUserDao.deleteUser(id);
 	}
 
+	@Override
+	public int updateUserDemo(MyUser record) throws Exception {
+		return myUserDao.updateUserDemo(record);
+	}
+
+
 }

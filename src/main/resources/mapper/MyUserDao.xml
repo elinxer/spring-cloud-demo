@@ -24,4 +24,17 @@
         delete from user where id=#{id}
     </delete>
 
+    <update id="updateUserDemo" parameterType="com.zhiteer.demo.demouser.model.MyUser">
+        update user
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="age !=null">
+                age = #{age, jdbcType=INTEGER},
+            </if>
+        </set>
+        where id=#{id, jdbcType=INTEGER}
+    </update>
+
 </mapper>

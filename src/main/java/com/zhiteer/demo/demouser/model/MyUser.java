@@ -5,9 +5,9 @@ public class MyUser {
 
     private Integer id = 0;
 
-    private String name = "";
+    private String name;
 
-    private Integer age = 0;
+    private Integer age;
 
     public String getName() {
         return name;

@@ -18,4 +18,6 @@ public interface MyUserDao {
 
     int deleteUser(Integer key);
 
+    int updateUserDemo(MyUser record);
+
 }
