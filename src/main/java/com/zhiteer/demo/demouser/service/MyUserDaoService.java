@@ -16,6 +16,8 @@ public interface MyUserDaoService {
 
 	List<MyUser> selectAllUserPage() throws Exception;
 
+	List<MyUser> selectAllUserResultMap() throws Exception;
+
 	// xml 采用 map模式存储 resultType="map"
 	List<Map<String, Object>> selectAllUserMap() throws Exception;
 

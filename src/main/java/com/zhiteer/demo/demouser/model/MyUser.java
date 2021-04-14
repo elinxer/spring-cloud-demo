@@ -9,6 +9,8 @@ public class MyUser {
 
     private Integer age;
 
+    private String uname;
+
     public String getName() {
         return name;
     }
@@ -31,6 +33,14 @@ public class MyUser {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getUname() {
+        return uname;
+    }
+
+    public void setUname(String uname) {
+        this.uname = uname;
     }
 
     @Override

@@ -13,6 +13,8 @@ public interface MyUserDao {
 
     List<MyUser> selectAllUser();
 
+    List<MyUser> selectAllUserResultMap();
+
     int addUser(MyUser record);
 
     int updateUser(MyUser record);

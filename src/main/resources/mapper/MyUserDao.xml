@@ -23,15 +23,24 @@
 <!--    </resultMap>-->
 
     <!--一条查询 SQL 语句执行后将返回结果，而结果可以使用 Map 存储，也可以使用 POJO 存储。-->
+    <!--使用自定义结果集类型-->
     <resultMap id="resultMapDemo1" type="com.zhiteer.demo.demouser.model.MyUser">
-
+        <!-- property 是 com.zhiteer.demo.demouser.model.MyUser 类中的属性-->
+        <!-- column是查询结果的列名，可以来自不同的表,property类似别名对应实体类-->
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="uname" column="name"/>
     </resultMap>
 
     <!-- 查询所有用户信息存到Map中，结果集是map类型-->
     <select id="selectAllUserMap" resultType="map">
         select * from user
     </select>
-
+    <!-- 使用自定义结果集类型查询所有用户 -->
+    <select id="selectAllUserResultMap" resultMap="resultMapDemo1">
+        select * from user
+    </select>
 
 
     <select id="selectUserById" parameterType="Integer" resultType="com.zhiteer.demo.demouser.model.MyUser">

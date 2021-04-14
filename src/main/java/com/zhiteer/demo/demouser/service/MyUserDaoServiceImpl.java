@@ -60,5 +60,10 @@ public class MyUserDaoServiceImpl implements MyUserDaoService {
 		return myUserDao.selectUserLike(param);
 	}
 
+	@Override
+	public List<MyUser> selectAllUserResultMap() throws Exception {
+		return myUserDao.selectAllUserResultMap();
+	}
+
 
 }
