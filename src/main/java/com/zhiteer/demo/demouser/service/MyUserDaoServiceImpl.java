@@ -31,6 +31,11 @@ public class MyUserDaoServiceImpl implements MyUserDaoService {
 	}
 
 	@Override
+	public List<Map<String, Object>> selectAllUserMap() throws Exception {
+		return myUserDao.selectAllUserMap();
+	}
+
+	@Override
 	public int addUser(MyUser record) throws Exception {
 		return myUserDao.addUser(record);
 	}

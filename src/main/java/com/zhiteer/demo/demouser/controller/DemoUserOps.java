@@ -70,6 +70,24 @@ public class DemoUserOps {
         return data;
     }
 
+    @RequestMapping("/selectAllUserMap")
+    public ResponseData selectAllUserMap() throws Exception {
+
+        ResponseData data = new ResponseData();
+
+        int pageNum = 1;
+        int pageSize = 20;
+
+        // 分页的三行核心代码，装了依赖包后，仅仅这三行代码就可以实现分页
+        PageHelper.startPage(pageNum, pageSize);
+
+        List<Map<String, Object>> sysMenus = myUserService.selectAllUserMap();
+
+        data.setResult(new PageInfo<Map<String, Object>>(sysMenus));
+
+        return data;
+    }
+
     //endregion
 
 

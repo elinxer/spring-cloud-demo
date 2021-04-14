@@ -23,4 +23,6 @@ public interface MyUserDao {
 
     List<MyUser> selectUserLike(Map<String, Object> param);
 
+    List<Map<String, Object>> selectAllUserMap();
+
 }
