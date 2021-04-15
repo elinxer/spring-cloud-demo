@@ -1,6 +1,11 @@
 package com.zhiteer.demo.demouser.model;
 
 
+import java.util.List;
+
+/**
+ * @author elinx
+ */
 public class MyUser {
 
     private Integer id = 0;
@@ -9,7 +14,7 @@ public class MyUser {
 
     private Integer age;
 
-    private String uname;
+    private List<Orders> ordersList;
 
     public String getName() {
         return name;
@@ -35,12 +40,13 @@ public class MyUser {
         this.name = name;
     }
 
-    public String getUname() {
-        return uname;
+
+    public List<Orders> getOrdersList() {
+        return ordersList;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname;
+    public void setOrdersList(List<Orders> ordersList) {
+        this.ordersList = ordersList;
     }
 
     @Override
