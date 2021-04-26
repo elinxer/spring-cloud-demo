@@ -10,6 +10,14 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
+ *
+ * 有人会问，如果我一个接口想设置多个切面类进行校验怎么办？这些切面的执行顺序如何管理？
+ * 很简单，一个自定义的AOP注解可以对应多个切面类，这些切面类执行顺序由@Order注解管理，该注解后的数字越小，所在切面类越先执行。
+ *
+ * == @Order(0)
+ * == @Order(1)
+ * == @Order(2)
+ *
  * @author Elinx<yangdongsheng03>
  */
 @Aspect
